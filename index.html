@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Jquery for beginners</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1 class="title">Simple examples Jquery</h1>
+
+      <div class="example-1">
+        <h3>1.Chance color link tags</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+               &lt;p>Text &lt;a href="#"&gt;link&lt;/a&gt;&lt;/p&gt;
+               &lt;p>Link after &lt;em>tag is orange&lt;/em> &lt;a href="#">Link after &lt;em&gt;&lt;/a>&lt;/p>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+              $("a").css("color", "red");
+              $("em + a").css("color", "orange");
+              $(".teste > em").css("color", "red");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>Lorem ipsum dolor sit <a href="#">Link Red</a></p>
+          <p>Link after <em>enfase tag is orange</em> <a href="#">Link after &lt;em&gt;;</a></p>
+        </div>
+      </div><!-- Example1 -->
+
+      <hr class="divider">
+
+      <div class="example-N">
+        <h3>2.Chance color Title</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;h1 id="title">Change color text use ID tag&lt;/h1>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+              $("#title").css("color", "purple");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <h1 id="title">3.Change color text use ID tag</h1>
+          </p>
+        </div>
+      </div><!-- Example-2 -->
+
+      <hr class="divider">
+
+      <div class="example-3">
+        <h3>4.Target the first element after a html tag</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;p>Some text &lt;em>enfase text</em> &lt;a href="#">some link to target&lt;/a>&lt;/p>
+             &lt; class="teste">Use css class to the same &lt;em>text we change after class&lt;/em>&lt;/p>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="tmp-html language-markup">
+              $("em + a").css("color", "orange");
+              $("p > em").css("color", "green");
+              $(".teste > em").css("color", "red");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <p>Some text <em>enfase text</em> <a href="#">some link to target</a></p>
+            <p class="teste">Use css class to the same <em>text we change after class</em></p>
+          </p>
+        </div>
+      </div><!-- Example-3 -->
+
+      <hr class="divider">
+
+      <div class="example-4">
+        <h3>4.Chance color 3th element list</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;ul class="list">
+               &lt;li>Element 1&lt;/li>
+               &lt;li>Element 2&lt;/li>
+               &lt;li>Element 3&lt;/li>
+             &lt;/ul>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+              $("#oListIndent li:nth-child(3)").css("color", "blue");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+            <ul id="list" class="list">
+              <li>Element 1</li>
+              <li>Element 2</li>
+              <li>Element 3</li>
+            </ul>
+        </div>
+      </div><!-- Example-4 -->
+
+      <hr class="divider">
+
+      <div class="example-5">
+        <h3>5.Chance text LI use tag [name] element list</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;ul class="list">
+               &lt;li name="list name">Element 1&lt;/li>
+               &lt;li>Element 2&lt;/li>
+               &lt;li>Element 3&lt;/li>
+             &lt;/ul>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+              $("li[name]").html("'ADD NEW TEXT IN LI'");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+            <ul  class="list">
+              <li name="list name">Element 1</li>
+              <li>Element 2</li>
+              <li>Element 3</li>
+            </ul>
+        </div>
+      </div><!-- Example-5 -->
+
+      <hr class="divider">
+
+      <div class="example-6">
+        <h3>6.Chance html content use class/id</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;ol id="List-change">
+               &lt;li>and the Sorcerer's Stone&lt;/li>
+               &lt;li>and the Half-Blood Prince&lt;/li>
+               &lt;li>and the Chamber of Secrets&lt;/li>
+               &lt;li class="name">Prisoner of Azkaban&lt;/li>
+               &lt;li >and the Goblet of Fire&lt;/li>
+               &lt;li>and the Order of the Phoenix&lt;/li>
+               &lt;li>and the Deathly Hallows&lt;/li>
+             &lt;/ol>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+              $(".name").html("&lt;i>CHANGE TEXT USE CLASS NAME &lt;/i>");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <ol id="List-change">
+              <li>and the Sorcerer's Stone</li>
+              <li>and the Half-Blood Prince</li>
+              <li>and the Chamber of Secrets</li>
+              <li class="name">Prisoner of Azkaban</li>
+              <li >and the Goblet of Fire</li>
+              <li>and the Order of the Phoenix</li>
+              <li>and the Deathly Hallows</li>
+            </ol>
+          </p>
+        </div>
+      </div><!-- Example-6 -->
+
+      <hr class="divider">
+
+      <div class="example-7">
+        <h3>7.Add placeholder in pinput tag</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;input type="text" id="yourName" size="50">
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+              $("input[type='text']#yourName").val("Placeholder");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <input type="text" id="yourName" size="50">
+          </p>
+        </div>
+      </div><!-- Example-7 -->
+
+      <hr class="divider">
+
+      <div class="example-8">
+        <h3>8.Target img use alt tag</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt; = < &gt;; = >
+            &lt;img id="logo" src="http://www.julls.uk/wp-content/uploads/2016/08/julls-logo.png" width="300px" alt="NTT-logo">
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("img[alt^='NTT']").css({
+              "border-color": "bloack",
+              "border-width": "2px",
+              "border-style": "solid"
+            }).width(200);
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+            <img id="logo" src="http://www.julls.uk/wp-content/uploads/2016/08/julls-logo.png" width="300px" alt="NTT-logo">
+        </div>
+      </div><!-- Example-8 -->
+
+      <hr class="divider">
+
+      <div class="example-9">
+        <h3>9.Use <i>href</i> tag </h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;a href="http://google.es">LINK </a><br>
+             &lt;a href="http://www.pdf.es/link.pdf">PDF LINK </a>
+
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            ^ target the begining
+            $("a[href^='http://g").css("color", "cyan").html("CHANGE LINK");
+            <br>
+            $ target in the end
+            $("a[href$='pdf']").css("color", "red");
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <a href="http://google.es">link </a><br>
+            <a href="http://www.pdf.es/link.pdf">PDF LINK </a>
+          </p>
+        </div>
+      </div><!-- Example-9 -->
+
+      <hr class="divider">
+
+      <div class="example-10">
+        <h3>10. :even :odd selector, :first</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+
+            &lt;table id="tableData" border="1">
+              &lt;tr><td>Row with Index #0</td></tr>
+              &lt;tr><td>Row with Index #1</td></tr>
+              &lt;tr><td>Row with Index #2</td></tr>
+              &lt;tr><td>Row with Index #3</td></tr>
+            &lt;/table>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("#tableData tr:even").css("background-color", "#fffdd0");
+            $("#tableData tr:odd").css("background-color", "#ccc");
+            $("#tableData tr:first").css({
+              "background-color": "#0df",
+              "color": "#fff"
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+
+          <table id="tableData" border="1">
+            <tr><td>Row with Index #0</td></tr>
+            <tr><td>Row with Index #1</td></tr>
+            <tr><td>Row with Index #2</td></tr>
+            <tr><td>Row with Index #3</td></tr>
+          </table>
+
+        </div>
+      </div><!-- Example-10 -->
+
+      <hr class="divider">
+
+      <div class="example-11">
+        <h3>11.Select all elements that contain or not the specified text.</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;ul id="oListTypes">
+               &lt;li>and List 1</li>
+               &lt;li>and List 2</li>
+               &lt;li>List 3</li>
+              <li>and gravidad</li>
+             &lt;/ul>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("#oListTypes li:not(:contains(and))").css("color", "#7dd");
+
+            $("li:contains(gravida)").css({
+              "background-color": "#d79",
+              "color": "#fff"
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+            <ul id="oListTypes">
+              <li>and List 1</li>
+              <li>and List 2</li>
+              <li>List 3</li>
+              <li>and gravidad</li>
+            </ul>
+        </div>
+      </div><!-- Example-11 -->
+
+      <hr class="divider">
+
+      <div class="example-12">
+        <h3>12.Selects elements which contain at least one element that matches the specified selector. </h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt; = < &gt;; = >
+             ...
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("p:has(i)").hide();
+            alert($("p:has(i)").html());
+            $("p:has(i)").html("<i>Back change text and show</i>").show();
+
+            $("p:has(i)").append(" {append text in the end}");
+            $("p:has(i)").prepend("[prepend text in the beginning] ");
+            $("p:has(i)").before("<p class='.p_before'>New text use before jquery - CLIK HERE TO REPLACE TEXT</p> ");
+            $("p:has(i)").after("<p class='.p_after'>New text use after jquery - CLIK HERE TO REMOVE</p> ");
+
+            $(".p_after").click(function() {
+              $(this).remove();
+            });
+
+            $(".p_before").click(function() {
+              $(this).replaceWith('<p>I\'m the new text </p>')
+            });
+
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>First test <i>here change</i></p>
+        </div>
+      </div><!-- Example-12 -->
+
+      <hr class="divider">
+
+
+      <div class="example-13">
+        <h3>13. Add or remove class - .toggleClass(); </h3>
+        <h3>Add value in input</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+
+             &lt;ul id="oListIndent">
+               &lt;li>List 1</li>
+               &lt;li>List 2</li>
+               &lt;li>List 3</li>
+             &lt;/ul>
+             &lt;input type="text" id="yourList" name="" value="">
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("#oListIndent li").click(function() {
+              $(this).toggleClass("highlight");
+
+              var addText = $(this).text();
+              $("input[type=text]#yourList").val(addText);
+            });
+
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+            <ul id="oListIndent">
+              <li>List 1</li>
+              <li>List 2</li>
+              <li>List 3</li>
+            </ul>
+            <input type="text" id="yourList" name="" value="">
+        </div>
+      </div><!-- Example-13 -->
+
+      <hr class="divider">
+
+      <div class="example-14">
+        <h3>14.Bind an event handler to the  "mouseover" / "mouseout"</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;img id="img" src="https://goo.gl/MhrK8u" width="100px" alt="left">
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("#img").mouseover(function() {
+              $(this).attr("src", "https://goo.gl/MhrK8u");
+            });
+            $("#img").mouseout(function() {
+              $(this).attr("src", "https://goo.gl/jZXL4D");
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <img id="img" src="https://image.freepik.com/free-icon/arrow-bold-left-ios-7-interface-symbol_318-34824.jpg" width="100px" alt="left">
+          </p>
+        </div>
+      </div><!-- Example-14 -->
+
+      <hr class="divider">
+
+      <div class="example-15">
+        <h3>15.Chance color link tags</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt; = < &gt;; = >
+            &lt;a href="#" class="bottom" id="bottom">New Bottom</a>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $(".bottom").hover(function() {
+                $(this).addClass("active");
+                }, function() {
+                $(this).removeClass("active")
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+
+          <a href="#" class="bottom" id="bottom">New Bottom</a>
+
+        </div>
+      </div><!-- Example-N -->
+
+
+    </div><!-- Main -->
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="function.js"></script>
+
+  </body>
+</html>

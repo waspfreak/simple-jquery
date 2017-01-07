@@ -1,0 +1,80 @@
+// out: style.css, sourcemap: true, compress: true
+// main: style.less
+
+@grey-dark: #2c2c2d;
+@grey-light: #E4E0DF;
+@red: #FB3604;
+@text: #333131;
+@title: #064436;
+@withe: #fff;
+
+img{
+  clear: both;
+  display: block;
+  margin-bottom: 20px;
+}
+.highlight{
+  background-color: #555;
+}
+.bottom{
+  width: 80px;
+  padding: 20px;
+  background-color: #555;
+  color: #fff;
+  font-family: Arial;
+  &.active{
+    background-color: #432;
+    color: #fff;
+  }
+}
+
+.main {
+    padding: 5px;
+    color: @text;
+    .title{
+      color: @title;
+    }
+    .divider{
+      border: 1px solid @grey-light;
+      margin: 40px 0px;
+    }
+}
+
+
+/*CODE FORMAT*/
+.language-markup {
+  background-color: @grey-dark;
+  color: @grey-light;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-left: 10px;
+  white-space: pre-line;
+  label {
+    background: @red;
+    padding: 5px;
+    width: 100%;
+  }
+}
+
+.example {
+    border: 1px solid @grey-light;
+    margin: 30px 10px;
+    padding: 20px;
+    p{
+      span{
+        .color{
+          color: @red;
+          cursor: pointer;
+          }
+      }
+    }
+    label{
+      background: @red;
+      color: @withe;
+      margin-left: -12px;
+      margin-top: -28px;
+      padding: 5px;
+      position: absolute;
+    }
+
+}
