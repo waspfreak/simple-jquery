@@ -93,4 +93,62 @@ $(".bottom").hover(function() {
 
 });
 
+$(document).click(function(e) {
+  $("#mClickXPos").val(e.pageX);
+  $("#mClickYPos").val(e.pageY);
+});
+
+$(document).mousemove(function(e) {
+  $("#mMoveXPos").val(e.screenX);
+  $("#mMoveYPos").val(e.screenY);
+});
+
+$(document).keypress(function(e) {
+  var keyPressed = String.fromCharCode(e.which);
+  $("#keyPress").val(keyPressed);
+});
+
+$("#inputFormEvent").blur(function(e) {
+  $("#formEvent").text("Left input Element")
+});
+
+$("#inputFormEvent").change(function(e) {
+  $("#formEvent").text("Left input Change")
+});
+
+$("#inputFormEvent").focus(function(e) {
+  $("#formEvent").text("Left input Focus")
+});
+
+$("#inputFormEvent").select(function(e) {
+  $("#formEvent").text("Left input Selected")
+});
+
+function showWhatTouched(e){
+  alert(e.data.message);
+}
+
+var bsMsg = {message: "Best Selling Childrens Books"};
+var beMsg = {message: "Best event this Year"};
+
+$("#bestSelling").on("click", bsMsg, showWhatTouched);
+$("#bestEvents").on("click", beMsg, showWhatTouched);
+
+
+var sliderImg = ["img/1.png", "img/2.png", "img/3.png", "img/4.png"];
+
+var focusImg = 1;
+
+$("#slider").click(function() {
+  var image = sliderImg[focusImg];
+  focusImg++;
+  if(focusImg > 3){
+    focusImg = 0;
+  }
+  $("#slider").attr("src", image);
+});
+
+
+
+
 });

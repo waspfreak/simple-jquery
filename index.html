@@ -498,7 +498,194 @@
           <a href="#" class="bottom" id="bottom">New Bottom</a>
 
         </div>
+      </div><!-- Example-15 -->
+
+      <hr class="divider">
+
+      <div class="example-16">
+        <h3>16.Colect mouse position mousemove()/click()</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt; = < &gt;; = >
+             Mouse Click : X : &lt;input type="text" id="mClickXPos">
+             Y : &lt;input type="text" id="mClickYPos"><br />
+
+             Mouse Move : X : &lt;input type="text" id="mMoveXPos">
+             Y : &lt;input type="text" id="mMoveYPos"><br />
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $(document).click(function(e) {
+              $("#mClickXPos").val(e.pageX);
+              $("#mClickYPos").val(e.pageY);
+            });
+
+            $(document).mousemove(function(e) {
+              $("#mMoveXPos").val(e.pageX);
+              $("#mMoveYPos").val(e.pageY);
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            Mouse Click : X : <input type="text" id="mClickXPos">
+            Y : <input type="text" id="mClickYPos"><br />
+
+            Mouse Move : X : <input type="text" id="mMoveXPos">
+            Y : <input type="text" id="mMoveYPos"><br />
+          </p>
+        </div>
+      </div><!-- Example-16 -->
+
+      <hr class="divider">
+
+      <div class="example-17">
+        <h3>17.Bind an event handler to the “keypress</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;input type="text" id="keyPress">
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $(document).keypress(function(e) {
+              var keyPressed = String.fromCharCode(e.which);
+              $("#keyPress").val(keyPressed);
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <h3>TYPE A LETTER OUT OF THE INPUT</h3>
+            <input type="text" id="keyPress">
+          </p>
+        </div>
+      </div><!-- Example-17 -->
+
+      <hr class="divider">
+
+      <div class=" example-18">
+        <h3>18.Input events blur(); change(); focus(); select();</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt;span id="formEvent">Form Event</span> :
+             &lt;input type="text" id="inputFormEvent"><br /><br />
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            $("#inputFormEvent").blur(function(e) {
+              $("#formEvent").text("Left input Element")
+            });
+
+            $("#inputFormEvent").change(function(e) {
+              $("#formEvent").text("Left input Change")
+            });
+
+            $("#inputFormEvent").focus(function(e) {
+              $("#formEvent").text("Left input Focus")
+            });
+
+            $("#inputFormEvent").select(function(e) {
+              $("#formEvent").text("Left input Selected")
+            });
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <span id="formEvent">Form Event</span> :
+            <input type="text" id="inputFormEvent"><br /><br />
+          </p>
+        </div>
+      </div><!-- Example-18 -->
+
+      <hr class="divider">
+
+      <div class="example-N">
+        <h3>18.Track event Touched and show</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt; = < &gt;; = >
+             &lt;h2 id="bestSelling">Best Selling Childrens Books</h2>
+             &lt;h2 id="bestEvents">Best event this Year</h2>
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            function showWhatTouched(e){
+              alert(e.data.message);
+            }
+
+            var bsMsg = {message: "Best Selling Childrens Books"};
+            var beMsg = {message: "Best event this Year"};
+
+            $("#bestSelling").on("click", bsMsg, showWhatTouched);
+            $("#bestEvents").on("click", beMsg, showWhatTouched);
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <h2 id="bestSelling">Best Selling Childrens Books</h2>
+            <h2 id="bestEvents">Best event this Year</h2>
+          </p>
+        </div>
+      </div><!-- Example-18 -->
+
+      <hr class="divider">
+
+      <div class="example-19">
+        <h3>19.Simple slider img</h3>
+         <pre class="language-markup">
+          <label for="">HTML</label>
+           <code class="language-markup_code">
+             &lt; = < &gt;; = >
+             &lt;img id="slider" class="slider" src="img/1.png" alt="Img 1">
+           </code>
+         </pre>
+
+        <pre class="language-markup">
+          <label for="">JQUERY</label>
+          <code class="language-markup_code">
+            var sliderImg = ["img/1.png", "img/2.png", "img/3.png", "img/4.png"];
+
+            var focusImg = 1;
+
+            $("#slider").click(function() {
+              var image = sliderImg[focusImg];
+              focusImg++;
+              if(focusImg > 3){
+                focusImg = 0;
+              }
+              $("#slider").attr("src", image);
+            });
+
+          </code>
+        </pre>
+        <div class="example">
+          <label>Example</label>
+          <p>
+            <img id="slider" class="slider" src="img/1.png" alt="Img 1">
+          </p>
+        </div>
       </div><!-- Example-N -->
+
 
 
     </div><!-- Main -->
